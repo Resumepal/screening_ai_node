@@ -50,14 +50,6 @@ jobs:
         run: |
           echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
 
-      - name: Create Git tag
-        if: success()
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git tag v${{ steps.version.outputs.PACKAGE_VERSION }}
-          git push origin v${{ steps.version.outputs.PACKAGE_VERSION }}
-
       - name: Publish to npm
         run: npm publish --access public
         env:
