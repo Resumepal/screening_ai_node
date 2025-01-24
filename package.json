@@ -1,6 +1,6 @@
 {
   "name": "@byteraven/screening-ai",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A TypeScript SDK for the Screening AI API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

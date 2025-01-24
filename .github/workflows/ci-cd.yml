@@ -43,12 +43,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Bump version
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          npm version patch
-
       - name: Push changes and tags
         run: |
           git push origin main
