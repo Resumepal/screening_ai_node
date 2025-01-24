@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main # Trigger on pushes to the main branch
-  pull_request:
-    branches:
-      - main # Trigger on pull requests to the main branch
 
 jobs:
   test:
@@ -19,6 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18 # Use the Node.js version you want
+          registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
         run: npm install
@@ -45,12 +43,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Get version from package.json
-        id: version
-        run: |
-          echo "PACKAGE_VERSION=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+      - name: Bump version
+        run: npm version patch
 
       - name: Publish to npm
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Use an npm token for authentication
+
