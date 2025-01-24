@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18 # Use the Node.js version you want
+          node-version: 18
           registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
@@ -42,6 +42,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Stash changes
+        run: git stash --include-untracked
 
       - name: Bump version
         run: |
