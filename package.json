@@ -1,24 +1,20 @@
 {
-  "name": "screening_ai_node",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
+  "name": "screening-ai",
+  "version": "0.1.0",
+  "description": "A TypeScript SDK for the Screening AI API",
+  "main": "dist/index.js",  
+  "types": "dist/index.d.ts",  
   "scripts": {
+    "build": "tsc",  
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "keywords": ["screening", "ai", "api"],
+  "author": "akshit@byteraven.ai",
+  "license": "MIT",
   "dependencies": {
-    "axios": "^1.7.9",
-    "rxjs": "^7.8.1"
+    "axios": "^1.5.0" 
   },
   "devDependencies": {
-    "@types/node": "^22.10.10",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.0.0" 
   }
 }

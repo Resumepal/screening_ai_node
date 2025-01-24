@@ -32,7 +32,7 @@ export class ScreeningAI {
 
   constructor(params: { orgApiKey: string; basePath?: string }) {
     const config = new Configuration({
-      basePath: params.basePath || "http://localhost:3000",
+      basePath: params.basePath || "",
       apiKey: params.orgApiKey,
     });
 
