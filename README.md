@@ -1,5 +1,8 @@
+# Screening AI Typescript API Client
 
-# ScreeningAI Client SDK
+[![npm version](https://img.shields.io/npm/v/@byteraven/screening-ai.svg)](https://www.npmjs.com/package/@byteraven/screening-ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![CI/CD Pipeline](https://github.com/Resumepal/screening_ai_node/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/Resumepal/screening_ai_node/actions/workflows/ci-cd.yml)
 
 The `ScreeningAI` client SDK is a powerful and user-friendly TypeScript library designed to interact with the ScreeningAI platform. It provides seamless integration with APIs for managing screening jobs, templates, and submissions, making it easy to build and scale HR and talent management solutions.
 
@@ -56,6 +59,7 @@ import { ScreeningAI } from "screening-ai-sdk";
 ### 2. Initialize the Client
 
 Create an instance of the `ScreeningAI` class with your API key:
+Note - You can keep basePath empty if you are using ByteRaven managed Screening Server, you can provide your own managed server URL too.
 
 ```typescript
 const screeningAI = new ScreeningAI({
@@ -96,21 +100,27 @@ createJob();
 ### Screening Jobs API
 
 #### Create a Screening Job
+
 ```typescript
 screeningAI.createScreeningJob(platformCreateScreeningJobDto: PlatformCreateScreeningJobDto): Promise<PlatformScreeningJobResponseDto>
 ```
+
 Creates a new screening job.
 
 #### Get a Screening Job by ID
+
 ```typescript
 screeningAI.getScreeningJobById(screeningJobId: string): Promise<PlatformScreeningJobResponseDto>
 ```
+
 Fetches details of a screening job using its ID.
 
 #### Get All Screening Jobs of an Organization
+
 ```typescript
 screeningAI.getScreeningJobsOfOrg(): Promise<PlatformScreeningJobListResponseDto>
 ```
+
 Retrieves a list of all screening jobs associated with your organization.
 
 ---
@@ -118,21 +128,27 @@ Retrieves a list of all screening jobs associated with your organization.
 ### Screening Templates API
 
 #### Create a Screening Template
+
 ```typescript
 screeningAI.createScreeningTemplate(createScreeningTemplateDto: CreateScreeningTemplateDto): Promise<void>
 ```
+
 Creates a reusable template for screening.
 
 #### Generate Questions for a Template
+
 ```typescript
 screeningAI.generateScreeningTemplateQuestions(generateScreeningTemplateQuestionsDto: GenerateScreeningTemplateQuestionsDto): Promise<void>
 ```
+
 Generates a list of questions based on the template.
 
 #### Get All Screening Templates
+
 ```typescript
 screeningAI.getScreeningTemplates(): Promise<GetAllPlatformScreeningTemplatesOfOrgResponseDto>
 ```
+
 Fetches all templates associated with your organization.
 
 ---
@@ -140,6 +156,7 @@ Fetches all templates associated with your organization.
 ### Screening Submissions API
 
 #### Convert Audio to Text
+
 ```typescript
 screeningAI.convertAudioToText(
   orgId: string,
@@ -149,18 +166,23 @@ screeningAI.convertAudioToText(
   fileType: string
 ): Promise<PlatformScreeningSubmissionTextFromAudioResponseDto>
 ```
+
 Converts an audio file to text for a specific submission.
 
 #### Create a Screening Submission
+
 ```typescript
 screeningAI.createScreeningSubmission(createPlatformScreeningFormSubmissionDto: CreatePlatformScreeningFormSubmissionDto): Promise<CreatePlatformScreeningSubmissionResponseDto>
 ```
+
 Creates a new screening submission.
 
 #### Get Screening Submissions of an Organization
+
 ```typescript
 screeningAI.getScreeningSubmissionsOfOrg(getPlatformScreeningSubmissionsOfOrgDto: GetPlatformScreeningSubmissionsOfOrgDto): Promise<PlatformScreeningSubmissionListResponseDto>
 ```
+
 Fetches submissions for the organization.
 
 ---

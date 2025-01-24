@@ -8,6 +8,14 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Resumepal/screening_ai_node"
+  },
+  "bugs": {
+    "url": "https://github.com/Resumepal/screening_ai_node/issues"
+  },
+  "homepage": "https://github.com/Resumepal/screening_ai_node#readme",
   "keywords": [
     "screening",
     "ai",
